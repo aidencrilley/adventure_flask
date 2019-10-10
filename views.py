@@ -1,3 +1,5 @@
+from flask import render_template
+
 from route_helper import simple_route
 
 GAME_HEADER = """
@@ -14,10 +16,7 @@ def hello(world: dict) -> str:
     :param world: The current world
     :return: The HTML to show the player
     """
-    return GAME_HEADER+"""You are in the Lair of the Corgis.<br>
-    
-    <a href="goto/lair">Go further into the lair.</a><br>
-    <a href="goto/entrance">Retreat.</a>"""
+    return render_template("index.html")
 
 
 ENCOUNTER_MONSTER = """
@@ -35,7 +34,13 @@ What is its name?
     <input type="submit" value="Submit"><br>
 </form>
 """
+@simple_route('/showroom')
+def showroom(world: dict):
+    return render_template("showroom.html")
 
+@simple_route('/mclaren')
+def mclaren(world: dict):
+    return render_template("mclaren.html")
 
 @simple_route('/goto/<where>/')
 def open_door(world: dict, where: str) -> str:
