@@ -42,6 +42,10 @@ def showroom(world: dict):
 def mclaren(world: dict):
     return render_template("mclaren.html")
 
+@simple_route('/lamborghini')
+def lamborghini(world: dict):
+    return render_template("lamborghini.html")
+
 @simple_route('/goto/<where>/')
 def open_door(world: dict, where: str) -> str:
     """
