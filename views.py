@@ -36,15 +36,19 @@ What is its name?
 """
 @simple_route('/showroom')
 def showroom(world: dict):
-    return render_template("showroom.html")
+    return render_template("showroom.html", world=world)
 
 @simple_route('/mclaren')
 def mclaren(world: dict):
-    return render_template("mclaren.html")
+    return render_template("mclaren.html", world=world)
 
 @simple_route('/lamborghini')
 def lamborghini(world: dict):
-    return render_template("lamborghini.html")
+    return render_template("lamborghini.html", world=world)
+
+@simple_route('/ferrari')
+def ferrar(world: dict):
+    return render_template("ferrari.html", world=world)
 
 @simple_route('/goto/<where>/')
 def open_door(world: dict, where: str) -> str:
