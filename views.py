@@ -59,7 +59,12 @@ def ferrari(world: dict):
 
 @simple_route('/720s_test_drive')
 def mclaren_test_drive(world: dict):
-    return render_template("ferrari.html", world=world)
+    return render_template("720s_test_drive.html", world=world)
+
+@simple_route('/get_ticket')
+def get_ticket(world: dict):
+    world["Has Ticket"] = True
+    return render_template("get_ticket.html", world=world)
 
 @simple_route('/goto/<where>/')
 def open_door(world: dict, where: str) -> str:

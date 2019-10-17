@@ -16,7 +16,9 @@ from app import app
 INITIAL_WORLD = \
 [
     {"Car Key" : "McLaren",
-     "Has Key" : False}
+     "Has Key" : False},
+
+    {"Has Ticket" : False}
 ]
 
 
