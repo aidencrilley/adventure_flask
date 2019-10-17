@@ -42,12 +42,23 @@ def showroom(world: dict):
 def mclaren(world: dict):
     return render_template("mclaren.html", world=world)
 
+@simple_route('/mclaren_key')
+def mclaren_key(world: dict):
+    for unit in world:
+        if unit["Car Key"] == "McLaren":
+            unit["Has Key"] = True
+    return render_template("mclaren_key.html", world=world)
+
 @simple_route('/lamborghini')
 def lamborghini(world: dict):
     return render_template("lamborghini.html", world=world)
 
 @simple_route('/ferrari')
-def ferrar(world: dict):
+def ferrari(world: dict):
+    return render_template("ferrari.html", world=world)
+
+@simple_route('/720s_test_drive')
+def mclaren_test_drive(world: dict):
     return render_template("ferrari.html", world=world)
 
 @simple_route('/goto/<where>/')

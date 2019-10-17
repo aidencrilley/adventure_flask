@@ -13,7 +13,11 @@ from flask import request, session, redirect
 
 from app import app
 
-INITIAL_WORLD = {}
+INITIAL_WORLD = \
+[
+    {"Car Key" : "McLaren",
+     "Has Key" : False}
+]
 
 
 def simple_route(path: str, **options):
