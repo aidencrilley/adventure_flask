@@ -8,13 +8,14 @@
     <p>This is the Lamborghini Aventador SVJ</p>
     <img src="/static/lamborghini_aventador.jpeg" alt="Lamborghini Aventador SVJ"
         width="600" height="400">
-    <p>
-        <label>Would you like to take the Lamborghini Aventador SVJ for a test drive?</label>
-        <select id="test_drive">
-            <option value = "Yes">Yes</option>
-            <option value = "No">No</option>
+    <form action="/save/">
+        <p>Want to see the Lamborghini Aventador SVJ race around a track?</p>
+        <select name="race">
+            <option>Yes</option>
+            <option>No</option>
         </select>
-    </p>
+        <input type="submit" value="Submit">
+    </form>
     <p>Click <a href="/ferrari">HERE</a> to see the Ferrari collection.</p>
 </body>
 </html>

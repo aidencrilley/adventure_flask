@@ -2,6 +2,8 @@ from flask import render_template
 
 from route_helper import simple_route
 
+from flask import request
+
 GAME_HEADER = """
 <h1>Welcome to adventure quest!</h1>
 <p>At any time you can <a href='/reset/'>reset</a> your game.</p>
@@ -44,9 +46,6 @@ def mclaren(world: dict):
 
 @simple_route('/mclaren_key')
 def mclaren_key(world: dict):
-    for unit in world:
-        if unit["Car Key"] == "McLaren":
-            unit["Has Key"] = True
     return render_template("mclaren_key.html", world=world)
 
 @simple_route('/lamborghini')
@@ -63,8 +62,15 @@ def mclaren_test_drive(world: dict):
 
 @simple_route('/get_ticket')
 def get_ticket(world: dict):
-    world["Has Ticket"] = True
     return render_template("get_ticket.html", world=world)
+    world["Has Ticket"] = True
+
+@simple_route('/save/')
+def save_laborghini_track(world: dict, *args) -> str:
+    world["Race_Status"] = request.values.get("race")
+    if world["Race_Status"] == "Yes":
+        return render_template("lamborghini_track.html")
+
 
 @simple_route('/goto/<where>/')
 def open_door(world: dict, where: str) -> str:
