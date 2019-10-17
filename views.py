@@ -46,6 +46,7 @@ def mclaren(world: dict):
 
 @simple_route('/mclaren_key')
 def mclaren_key(world: dict):
+    world["Has_McLaren_Key"] = True
     return render_template("mclaren_key.html", world=world)
 
 @simple_route('/lamborghini')
@@ -62,42 +63,23 @@ def mclaren_test_drive(world: dict):
 
 @simple_route('/get_ticket')
 def get_ticket(world: dict):
+    world["Has_Ticket"] = True
     return render_template("get_ticket.html", world=world)
-    world["Has Ticket"] = True
 
 @simple_route('/save/')
 def save_laborghini_track(world: dict, *args) -> str:
     world["Race_Status"] = request.values.get("race")
     if world["Race_Status"] == "Yes":
         return render_template("lamborghini_track.html")
+    else:
+        return render_template("showroom.html")
+
+@simple_route('/save/ken_block/')
+def save_ken_block(world: dict, *args) -> str:
+    world["ken_block_autograph"] = request.values.get("signature?")
+    if world["ken_block_autograph"] == "Yes":
+        return render_template("ken_block.html")
+    else:
+        return render_template("showroom.html")
 
 
-@simple_route('/goto/<where>/')
-def open_door(world: dict, where: str) -> str:
-    """
-    Update the player location and encounter a monster, prompting the player
-    to give them a name.
-
-    :param world: The current world
-    :param where: The new location to move to
-    :return: The HTML to show the player
-    """
-    world['location'] = where
-    return GAME_HEADER+ENCOUNTER_MONSTER.format(where)
-
-
-@simple_route("/save/name/")
-def save_name(world: dict, monsters_name: str) -> str:
-    """
-    Update the name of the monster.
-
-    :param world: The current world
-    :param monsters_name:
-    :return:
-    """
-    world['name'] = monsters_name
-
-    return GAME_HEADER+"""You are in {where}, and you are nearby {monster_name}
-    <br><br>
-    <a href='/'>Return to the start</a>
-    """.format(where=world['location'], monster_name=world['name'])

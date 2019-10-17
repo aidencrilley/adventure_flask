@@ -14,7 +14,9 @@ from flask import request, session, redirect
 from app import app
 
 INITIAL_WORLD = {
-    "Race_Status" : ""
+    "Race_Status" : "",
+    "Has_Ticket" : False,
+    "ken_block_autograph" : False
 }
 
 
