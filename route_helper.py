@@ -17,7 +17,7 @@ INITIAL_WORLD = {
     "Race_Status" : "",
     "Has_Ticket" : False,
     "ken_block_autograph" : False,
-    "has_mclaren_key" : False
+    "Has_McLaren_Key" : False
 }
 
 
