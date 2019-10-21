@@ -66,6 +66,10 @@ def get_ticket(world: dict):
     world["Has_Ticket"] = True
     return render_template("get_ticket.html", world=world)
 
+@simple_route('/ferrari_race')
+def ferrar_race(world: dict):
+    return render_template("ferrari_race.html", world=world)
+
 @simple_route('/save/')
 def save_laborghini_track(world: dict, *args) -> str:
     world["Race_Status"] = request.values.get("race")
@@ -78,7 +82,7 @@ def save_laborghini_track(world: dict, *args) -> str:
 def save_ken_block(world: dict, *args) -> str:
     world["ken_block_autograph"] = request.values.get("signature?")
     if world["ken_block_autograph"] == "Yes":
-        return render_template("ken_block.html")
+        return render_template("ken_block.html", world=world)
     else:
         return render_template("showroom.html")
 
