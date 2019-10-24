@@ -42,6 +42,10 @@ def showroom(world: dict):
 
 @simple_route('/mclaren')
 def mclaren(world: dict):
+    if "Catalytic Converter" in world["Parts"]:
+        pass
+    else:
+        world["Parts"].append("Catalytic Converter")
     return render_template("mclaren.html", world=world)
 
 @simple_route('/mclaren_key')
