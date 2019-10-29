@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+<center>
 <head>
     <meta charset="UTF-8">
     <title>McLaren Test Drive</title>
 </head>
 <body>
     <h4>Enjoy your test drive!</h4>
+    <p>On your test drive, you found a battery on the side of the road. That could be useful!</p>
+    <p>
+        {% print("Parts: ") %}
+        {% print(world["Parts"]) %}
+    </p>
     <img src="/static/720s_test_drive.gif" alt="720s gif"
         height="400">
-    <p>Click <a href='/reset/'>HERE</a> to return to the beginning</p>
+    <p>Click <a href='/showroom'>HERE</a> to return to the showroom</p>
 </body>
 </html>
+</center>

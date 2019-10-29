@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+<center>
 <head>
     <meta charset="UTF-8">
     <title>Ken Block!</title>
 </head>
 <body>
-    <h3>Ken Block gave you an autograph!</h3>
+<h3>Ken Block gave you an autograph!</h3>
     <p>
-        {% print(world) %}
+        {% print("Parts: ") %}
+        {% print(world["Parts"]) %}
     </p>
     <img src="/static/ken_block.jpeg" alt="Ken Block"
         height="400">
-    <p>Click <a href='/reset/'>HERE</a> to return to the beginning</p>
+    <p>Click <a href='/showroom'>HERE</a> to return to the showroom</p>
 </body>
 </html>
+</center>

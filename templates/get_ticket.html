@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+<center>
 <head>
     <meta charset="UTF-8">
     <title>Ticket</title>
 </head>
 <body>
     <h3>Here is your ticket. Don't lose it!</h3>
-    <p> {% print(world) %} </p>
+    <p>
+        {% print("Parts: ") %}
+        {% print(world["Parts"]) %}
+    </p>
     <img src="/static/ticket.gif" alt="Ticket">
     <p>Click <a href="/ferrari_race">HERE</a> to use your ticket to see the Ferrari race!</p>
 </body>
 </html>
+</center>

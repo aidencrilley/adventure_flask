@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+<center>
 <head>
     <meta charset="UTF-8">
     <title>Showroom</title>
 </head>
 <body>
     <p>This is the showroom floor. It contains hypercars from brands such as Lamborghini, Ferrari, and McLaren.</p>
+    <p>You can click <a href="/reset/">HERE</a> at anytime to reset.</p>
     <p>Collect items at each page and hold on to them until the end!</p>
-    {% print(world) %}<br>
+    <p>
+        {% print("Parts: ") %}
+        {% print(world["Parts"]) %}
+    </p>
+    <p>Click <a href="/prize">HERE</a> to see if you can turn in your parts for a prize!</p>
     <img src="/static/hyper_showroom.jpeg" alt="Showroom Floor"
         width="750" height="500"><br>
     <p>Click <a href="/mclaren">HERE</a> to see the McLaren 720s.</p>
@@ -15,3 +21,4 @@
     <p>CLick <a href="/ferrari">HERE</a> to see the Ferrari collection.</p>
 </body>
 </html>
+</center>

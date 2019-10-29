@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+<center>
 <head>
     <meta charset="UTF-8">
     <title>McLaren</title>
 </head>
 <body>
-    <p>This is the McLaren 720s.</p>
-    <p>You found a catalytic converter!</p>
+    <p>This is the McLaren 720s. The 720s is one of the most powerful supercars on the market today!</p>
+    <p>You found a catalytic converter near the McLaren! Hold on to it!</p>
+    <p>
+        {% print("Parts: ") %}
+        {% print(world["Parts"]) %}
+    </p>
     <img src="/static/mclaren_720s.jpeg" alt="McLaren 720s">
     <p>
         <label>Would you like the key the 720s for a test drive?</label>
@@ -14,3 +19,4 @@
     <a href="/mclaren_key">McLaren Car Key</a>
 </body>
 </html>
+</center>

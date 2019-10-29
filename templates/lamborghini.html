@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+<center>
 <head>
     <meta charset="UTF-8">
     <title>Lamborghini</title>
 </head>
 <body>
-    <p>This is the Lamborghini Aventador SVJ</p>
+    <h2>This is the Lamborghini Aventador SVJ</h2>
+    <p>You found a set of fuzzy dice in the Lamborghini! You may want to keep those close by!</p>
+    <p>
+        {% print("Parts: ") %}
+        {% print(world["Parts"]) %}
+    </p>
     <img src="/static/lamborghini_aventador.jpeg" alt="Lamborghini Aventador SVJ"
         width="600" height="400">
     <form action="/save/">
@@ -18,3 +24,4 @@
     </form>
 </body>
 </html>
+</center>
