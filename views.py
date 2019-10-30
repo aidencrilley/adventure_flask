@@ -92,7 +92,13 @@ def ferrari_race(world: dict):
 
 @simple_route('/prize')
 def prize(world: dict):
-    return render_template("prize.html", world=world)
+    needed_items = ["Catalytic Converter", "Alternator", "Battery", "Fuzzy Dice", "Ken Block Autograph", "Ticket"]
+    needed_items.sort()
+    world["Parts"].sort()
+    if world["Parts"] == needed_items:
+        return render_template("prize.html", world=world)
+    else:
+        return render_template("need_more_items.html", world=world)
 
 @simple_route('/save/')
 def save_laborghini_track(world: dict, *args) -> str:
